@@ -1,0 +1,257 @@
+%-------------------------
+% Resume in Latex
+% Author
+% License : MIT
+%------------------------
+
+%---- Required Packages and Functions ----
+
+\documentclass[a4paper, 11pt]{article}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{pgffor}
+\setlength{\footskip}{4.08003pt}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=1cm, right=1.4cm, bottom=1cm}
+% Adjust margins
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
+\usepackage[most]{tcolorbox}
+\tcbset{ frame code={} center title, left=0pt, right=0pt, top=0pt, bottom=0pt, colback=gray!20, colframe=white, width=\dimexpr\textwidth\relax, enlarge left by=-2mm, boxsep=4pt, arc=0pt,outer arc=0pt, }
+
+\urlstyle{same}
+
+\raggedright
+
+% Sections formatting
+\titleformat{\section}{ \vspace{-4pt}\scshape\raggedright\large }{}{0em}{}[
+\color{black}
+\titlerule
+\vspace{-7pt}
+]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{ \item{ \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}} }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}
+\item
+\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+	\textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}}
+\end{tabular*}
+\vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}
+\item
+\begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+	\textbf{#1}                & \textit{\footnotesize{#4}} \\
+	\textit{\footnotesize{#3}} & \footnotesize{#2}          \\
+\end{tabular*}
+\vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}
+\item
+\begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+	\textbf{#1}                & \textit{\footnotesize{#3}} \\
+	\footnotesize{\textit{#2}} & \footnotesize{#4}
+\end{tabular*}
+\vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}
+\vspace{-4pt}}
+
+% Project heading command
+\newcommand{\projectHeading}[1]{%
+\textbf{Project:} \text{#1}%
+\vspace{-3.0mm}%
+}
+
+% Single responsibility item
+\newcommand{\resp}[1]{%
+\\ \hspace{10.0mm}\text{· #1}%
+}
+
+% Responsibilities list using foreach loop
+\newcommand{\responsibilities}[1]{%
+\item{Responsibilities:}%
+\foreach \r in {#1} {\resp{\r}}%
+}
+
+% Company description block
+\newcommand{\companyDesc}[1]{%
+\vspace{4.0mm}%
+#1%
+\vspace{2.0mm}%
+}
+
+% \renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm,
+rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex,
+rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}
+\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}
+\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}
+\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+	\textbf{\large #1}
+\end{tcolorbox}
+\vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+%---- End of Packages and Functions ------
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%
+%%%%%% DEFINE ELEMENTS HERE %%%%%%%
+\newcommand{\name}{Pham Van Manh} % Your Name
+\newcommand{\phone}{0961342548} % Your Phone Number
+\newcommand{\emaila}{manhpham0317@gmail.com} %Email 1
+\newcommand{\accountName}{Pham Manh}
+\newcommand{\headline}{Hello, I am Pham Manh! I am a passionate Software
+Engineer with a love for creating robust and user-friendly web applications. With
+3 years of hands-on experience, I've honed my skills in both front-end and back-end
+development.}
+
+\begin{document}
+\fontfamily{cmr}\selectfont
+%----------HEADING-----------------
+
+\parbox{2.6cm}{%
+	\includegraphics[width=2.5cm]{image.jpeg}
+}
+\parbox{\dimexpr\linewidth-2.9cm\relax}{
+	\begin{tabularx}
+		{\linewidth}{L r} \\ \textit{\Large \name} \\ {\raisebox{0.0\height}{\footnotesize \faPhone}\ \phone}\\
+		\href{mailto:\emaila}{\raisebox{0.0\height}{\footnotesize \faEnvelope}\ {\emaila}}
+		\\
+		\href{https://github.com/manhpvxj}{\raisebox{0.0\height}{\footnotesize
+				\faGithub}\ {\accountName}}
+		\\
+		\href{https://www.linkedin.com/in/manhpvxj/}{\raisebox{0.0\height}{\footnotesize
+				\faLinkedin}\ {\accountName}}
+		\\
+		\href{https://manhthedeev.pro}{\raisebox{0.0\height}{\footnotesize \faLink}\ {Portfolio}}
+		\\ \\ \textbf{\headline}
+	\end{tabularx}
+}
+
+%-----------EDUCATION-----------
+\section{\textbf{Education}}
+\resumeSubHeadingListStart \resumeSubheading {Hanoi University of Civil and Engineering}{}
+{}{Sep 2019 - April 2024} \resumeSubHeadingListEnd
+
+%
+
+%-----------EXPERIENCE-----------------
+\section{\textbf{Experience}}
+\resumeSubHeadingListStart
+
+%% --- SotaTek ---
+\resumeSubheading {SotaTek}{July 2025 - Present} {Software Engineer}{Hanoi}
+\companyDesc{SotaTek, which stands for State of the Art Technology, was established in Hanoi on August 11, 2015, by seven visionary founders. United by a shared goal, they aimed to deliver state-of-the-art technology solutions to businesses of all sizes and elevate Vietnamese technology to the global stage.}
+\vspace{4.0mm}
+\\ \projectHeading{Mint}
+\resumeItemListStart
+\item{Description: A Web3 iGaming \& Entertainment Platform.}
+\item{Position: Fullstack Developer}
+\item{Tech-stack: Typescript, NextJs, ReacJs, MUI, NestJS, PosgreSQL}
+\responsibilities{ Build web application and Telegram Miniapp using NextJs., Write API., Design database., Integrate 3rd platforms. }
+\resumeItemListEnd
+\vspace{3.0mm}
+
+\projectHeading{Bloomtech}
+\resumeItemListStart
+\item{Description: Bloom is designed to help growers and food \& beverage companies shift toward regenerative, nutrient- dense agriculture without compromising productivity or profitability. Through Soil Restoration Projects and digital Agriculture Agents platform, Bloom delivers tailored, cost-neutral pathways to restore soil health, reduce synthetic input dependency, and future-proof production. }
+\item{Position: Fullstack Developer}
+\item{Tech-stack: Typescript, NextJs, ReacJs, MUI, NestJS, PosgreSQL}
+\responsibilities{ Build web application and mobile responsive, Design database \& Write API for application., Integrate AI Agents and AI ML models for Field’s practice recommendation and FarmGPT features., Review code for other members. }
+\resumeItemListEnd
+\vspace{3.0mm}
+
+%% --- Ominext ---
+\resumeSubheading {Ominext}{July 2024 - June 2025} {Software Engineer}{Hanoi}
+\companyDesc{Ominext is a subsidiary of OmiGroup. Since 2012, Ominext has implemented digital transformation for thousands of hospitals and health facilities.}
+\\ \projectHeading{MTB (October 2024 - December 2024)} \resumeItemListStart \item{Description: An Ed-tech system for teaching Alzheimer's patients.}
+\item{Tech-stack: Typescript, NextJS, Python (Flask), PostgreSQL.} \item{Team size: 13}
+\responsibilities{ Setup source codebase using NextJS., Develop frontend web following specs., {Implement core feature: Online teaching using Websocket.}, Fix bugs., Review code for other members. }
+\resumeItemListEnd
+\vspace{3.0mm}
+\projectHeading{Nursingcare (July 2024 - September 2024)} \resumeItemListStart
+\item{Description: A system to manage nursing homes and a combined application allows nursing staff to update the patient's status and the patient's family members to monitor the condition of their relatives.}
+\item{Tech-stack: Typescript, ReactJS, Java Springboot, PostgreSQL.} \item{Team size: 15}
+\responsibilities{ Develop frontend web following specs., Draw charts for the admin site., Fix bugs., Review code for other members. }
+\resumeItemListEnd
+
+%% --- Rencity ---
+\resumeSubheading {Rencity}{Aug 2023 - July 2024} {Full-stack Developer}{Hanoi}
+\companyDesc{Established in 2014 as an information channel for renting apartments, Rencity now is a rental connection platform for rooms and apartments, designed to make the process of finding and managing rentals easier and more efficient.}
+\\ \projectHeading{Rencity} \resumeItemListStart \item{Tech-stack: Dart, Typescript, Flutter, NestJS, MySQL.}
+\item{Team size: 20} \responsibilities{ Maintained old features., Fix bugs., Improved responsive and friendly UI/UX., Contributed to design and implement new features., Integrated 3rd Payment Gateway for online payment., {Integrated ZNS(Zalo Notification Service) for transaction notifications.} }
+\resumeItemListEnd
+\vspace{3.0mm}
+\projectHeading{Rencity Website} \resumeItemListStart \item{Tech-stack: Typescript, NextJS, NestJS, MySQL.}
+\item{Team size: 2} \responsibilities{ Developed Web version for Rencity app., Implemented responsive UI with NextJS. }
+\resumeItemListEnd
+
+%% --- Tesosoft ---
+\resumeSubheading {Tesosoft}{April 2022 - July 2023} {Front-end Developer}{Hanoi}
+\companyDesc{Established in 2019, Tesosoft is an IT digital development company specializing in advanced websites, applications, and business systems with custom designed solutions.}
+\\ \projectHeading{AMK (May 2023 - July 2023)} \resumeItemListStart \item{Tech-stack: Typescript, ReactJS, NextJS, NestJS, PostgreSQL.}
+\item{Team size: 15} \responsibilities{ Setup client web source code base using NextJS., Developed backend using NestJS., {Implemented features for client web using NextJS and admin web using ReactJS.} }
+\resumeItemListEnd
+\vspace{2.0mm}
+\projectHeading{Aiwado (April 2022 - April 2023)} \resumeItemListStart \item{Tech-stack: Typescript, ReactNative, ReactJS, NestJS, PostgreSQL.}
+\item{Team size: 12} \responsibilities{ Implemented Components that can be reused., Improved responsive and friendly UI/UX., {Implemented features for client app using ReactNative and admin web using ReactJS.}, Contributed to design and implement new features. }
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-8.5mm}
+
+%-----------Technical skills-----------------
+\section{\textbf{Technical Skills}}
+\begin{itemize}[leftmargin=0.1in, label={}]
+	\small{\item{ \textbf{Languages}{: JavaScript, Typescript, Dart} \\ \textbf{Developer Tools}{: Visual Studio Code, Intellij IDEA, Postman, Figma, Photoshop} \\ \textbf{Frameworks}{: React, NextJS, Flutter, NestJS, ExpressJS} \\ \textbf{Databases}{: MySQL, PostgreSQL, MongoDB} \\ \textbf{Others}{: Microservices Architecture, Docker, Kubernetes} }}
+\end{itemize}
+\vspace{-16pt}
+
+%-------------------------------------------
+\end{document}
